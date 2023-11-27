@@ -1,3 +1,3 @@
 <?php
-    $connection = mysqli_connect('localhost', 'root', '', '/database/updated.sql');
+    $connection = mysqli_connect('localhost', 'root', '', '/database/updated');
 ?>
