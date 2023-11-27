@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <title>Document</title>
+</head>
+<?php
+    $conn = mysqli_connect('localhost', 'root', '', 'crud');
+    if(isset($_POST['username']) && isset($_POST['message'])){
+        $username = $_POST['username'];
+        $message = $_POST['message'];
+        if(empty($_POST['username']) || empty($_POST['message'])){
+            header('location: index.php');
+        }else{
+            $qury = "INSERT INTO updated(username, message) VALUES('$username', '$message')";
+            $resul = mysqli_query($conn, $qury);
+        }
+    }
+?>
+<body>
+    <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;" >
+        <div class="container w-75">
+            <form action="index.php" method="post" class="border p-3">
+                <div class="mb-3 p-3 text-center bg-info-subtle">
+                    <h2>Form for comments</h2>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Username</label>
+                    <input type="text" class="form-control" name="username" placeholder="name@example">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea name="message" class="form-control" cols="30" rows="10"></textarea>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn bg-primary bg-gradient text-white">Submit</button>
+
+                    <button class="btn bg-warning">
+                        <a href="edit.php">
+                            Edite
+                        </a>
+                    </button>
+
+                    <button class="btn bg-warning">
+                        <a href="views.php">
+                            Views Tabel
+                        </a>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
