@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <?php
-    $conn = mysqli_connect('localhost', 'root', '', 'crud');
+    $conn = mysqli_connect('localhost', 'root', '', '/database/updated.sql');
     if(isset($_POST['username']) && isset($_POST['message'])){
         $username = $_POST['username'];
         $message = $_POST['message'];
@@ -22,7 +22,7 @@
 <body>
     <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;" >
         <div class="container w-75">
-            <form action="index.php" method="post" class="border p-3">
+            <form action="index.html" method="post" class="border p-3">
                 <div class="mb-3 p-3 text-center bg-info-subtle">
                     <h2>Form for comments</h2>
                 </div>
