@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <?php
-    $conn = mysqli_connect('localhost', 'root', '', '/database/updated.sql');
+    $conn = mysqli_connect('localhost', 'root', '', '/database/updated');
     if(isset($_POST['username']) && isset($_POST['message'])){
         $username = $_POST['username'];
         $message = $_POST['message'];
